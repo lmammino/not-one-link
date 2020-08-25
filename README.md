@@ -1,5 +1,9 @@
 # not-one-link
 
+[![npm version](https://badge.fury.io/js/not-one-link.svg)](https://badge.fury.io/js/not-one-link)
+[![CI](https://github.com/lmammino/not-one-link/workflows/CI/badge.svg)](https://github.com/lmammino/not-one-link/actions?query=workflow%3ACI)
+[![codecov](https://codecov.io/gh/lmammino/not-one-link/branch/master/graph/badge.svg)](https://codecov.io/gh/lmammino/not-one-link)
+
 A simple Node.js library that allows you to re-map Amazon links from one country to another (Like Amazon OneLink™️ but simpler to use)
 
 

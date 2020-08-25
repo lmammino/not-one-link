@@ -9,7 +9,7 @@
   "engineStrict": true,
   "scripts": {
     "test:lint": "eslint src",
-    "test:unit": "tap --coverage-report=lcov test/**.test.js",
+    "test:unit": "tap --no-browser --coverage-report=lcov test/**.test.js",
     "test": "npm run test:lint && npm run test:unit"
   },
   "keywords": [
