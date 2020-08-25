@@ -1,15 +1,29 @@
 {
   "name": "not-one-link",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple Node.js library that allows you to re-map Amazon links from one country to another (Like Amazon OneLink™️ but simpler to use)",
   "main": "src/index.js",
+  "engines": {
+    "node": ">= 10"
+  },
+  "engineStrict": true,
   "scripts": {
     "test:lint": "eslint src",
-    "test:unit": "tap test/**.test.js",
+    "test:unit": "tap --coverage-report=lcov test/**.test.js",
     "test": "npm run test:lint && npm run test:unit"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "Amazon",
+    "One Link",
+    "Amazon One Link",
+    "Amazon OneLink",
+    "URL rewrite",
+    "affiliate",
+    "link",
+    "tag",
+    "redirect"
+  ],
+  "author": "Luciano Mammino",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {

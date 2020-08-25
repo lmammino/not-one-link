@@ -1,0 +1,44 @@
+name: CI
+on: [push]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        node: [10, 12, 14]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Begin CI...
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}.x
+
+      - name: Use cached node_modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: nodeModules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            nodeModules-
+      
+      - name: Install dependencies
+        run: npm install
+        env:
+          CI: true
+
+      - name: Test
+        run: npm test
+        env:
+          CI: true
+
+      - name: Send coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage/lcov.info
+          flags: Node${{ matrix.node }}
