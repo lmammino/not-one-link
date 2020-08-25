@@ -2,16 +2,16 @@
   "name": "not-one-link",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:lint": "eslint src",
+    "test:unit": "tap test/**.test.js",
+    "test": "npm run test:lint && npm run test:unit"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "mmdb-reader": "^1.2.0"
-  },
+  "license": "MIT",
+  "dependencies": {},
   "devDependencies": {
     "eslint": "^7.7.0",
     "eslint-config-standard": "^14.1.1",
@@ -19,6 +19,6 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "serverless": "^1.79.0"
+    "tap": "^14.10.8"
   }
 }

@@ -3,16 +3,23 @@
 const { URL } = require('url')
 const amazonDomainsMap = require('./amazonDomainsMap')
 
-module.exports = function rewriteUrl (url, userCountryCode, defaultCountry = 'US', tagsMap = {}) {
-  const preferredSite = amazonDomainsMap[userCountryCode] || amazonDomainsMap[defaultCountry]
+module.exports = function rewriteUrl (url, userCountryCode, tagsMap = {}) {
+  const ucc = typeof userCountryCode === 'string' ? userCountryCode.toUpperCase() : undefined
+  const preferredSite = amazonDomainsMap[ucc]
 
-  try {
-    const u = new URL(url)
-    // TODO remove tag
-    // TODO add tag for current site (if available)
-    // TODO rebuild full url
-    // TODO return URL
-  } catch (err) {
-    return `https://${preferredSite}`
+  if (!preferredSite) {
+    // if no mapping is available for the given country it keeps the url unchanged
+    return url
   }
+
+  const tag = tagsMap[preferredSite]
+
+  const u = new URL(url)
+  u.searchParams.delete('tag')
+  if (tag) {
+    u.searchParams.set('tag', tag)
+  }
+  u.protocol = 'https:'
+  u.host = preferredSite
+  return u.toString()
 }
