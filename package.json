@@ -1,6 +1,6 @@
 {
   "name": "not-one-link",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple Node.js library that allows you to re-map Amazon links from one country to another (Like Amazon OneLink™️ but simpler to use)",
   "main": "src/index.js",
   "engines": {
