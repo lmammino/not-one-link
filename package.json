@@ -23,6 +23,14 @@
     "tag",
     "redirect"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lmammino/not-one-link.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lmammino/not-one-link/issues"
+  },
+  "homepage": "https://github.com/lmammino/not-one-link#readme",
   "author": "Luciano Mammino",
   "license": "MIT",
   "dependencies": {},
