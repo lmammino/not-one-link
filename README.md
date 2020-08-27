@@ -83,7 +83,7 @@ console.log(res.country.iso_code)
 ```
 
 
-## Creating a URL rewrite web server
+## Creating a URL rewriting web server
 
 If you want to create a webserver that you can use as a proxy to redirect people to their nearest amazon store you could write something like this:
 
