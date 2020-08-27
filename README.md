@@ -13,7 +13,7 @@ If you want to direct your users to a product page on Amazon and you have an int
 
 As far as I am aware the only viable option to do this today is Amazon OneLink™️.
 
-If you have tried to setup Amazon OneLink™️, you have probably been frustrated with the long process and chances are that, in the end, it didn't work for you. Or if it did work for you, you probably already realised that your links won't work with a URL-shortner or in any external website like Twitter or YouTube. 
+If you have tried to setup Amazon OneLink™️, you have probably been frustrated with the long process and chances are that, in the end, it didn't work for you. Or if it did work for you, you probably already realised that your links won't work with a URL-shortner or in any external website like Twitter or YouTube.
 
 This library is born with the intent to help you to implement your own self-hosted Amazon OneLink™️ alternative.
 
@@ -62,9 +62,9 @@ const tagsMap = {
 }
 
 const url = 'https://www.amazon.com/dp/1839214112/'
-rewriteUrl(url, 'UK') // -> https://www.amazon.co.uk/dp/1839214112/?tag=myUKTag
-rewriteUrl(url, 'ES') // -> https://www.amazon.es/dp/1839214112/?tag=myESTag
-rewriteUrl(url, 'IT') // -> https://www.amazon.it/dp/1839214112/?tag=myITTag
+rewriteUrl(url, 'UK', tagsMap) // -> https://www.amazon.co.uk/dp/1839214112/?tag=myUKTag
+rewriteUrl(url, 'ES', tagsMap) // -> https://www.amazon.es/dp/1839214112/?tag=myESTag
+rewriteUrl(url, 'IT', tagsMap) // -> https://www.amazon.it/dp/1839214112/?tag=myITTag
 ```
 
 
