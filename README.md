@@ -83,6 +83,11 @@ console.log(res.country.iso_code)
 ```
 
 
+## Running this code on a Lambda on AWS?
+
+If you are thinking about doing something like this, this is totally doable, in fact, you can check out [`not-one-link-lambda`](https://github.com/lmammino/not-one-link-lambda).
+
+
 ## Creating a URL rewriting web server
 
 If you want to create a webserver that you can use as a proxy to redirect people to their nearest amazon store you could write something like this:
